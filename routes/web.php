@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', \App\Http\Livewire\Authentication::class);
 
-Route
+Route::get('login/', [\App\Http\Livewire\Authentication::class, 'login'])->name('login.google');
+Route::get('login/google/callback', [\App\Http\Livewire\Authentication::class, 'login']);
+

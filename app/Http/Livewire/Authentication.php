@@ -14,14 +14,18 @@ class Authentication extends Component
             'passcode' => 'required'
         ]);
 
-        $checkPasscode = \App\Models\TechnodreamPasscodeModel::where('passcode', $this->passcode)->first();
+        $checkPasscode = \App\Models\TechnodreamPasscodeModel::where('passcode', $this->passcode)->get();
         
         $errors = $this->getErrorBag();
-        if($checkPasscode){
+        if($checkPasscode->isEmpty()){
             return redirect()->route('login.google');
         }else{
             session()->flash('message', 'Invalid passcode.');
         }
+    }
+
+    public function login(){
+        return Socialite::driver('google')->redirect();
     }
 
     public function render()
