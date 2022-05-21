@@ -15,7 +15,7 @@ class CreateTechnodreamPasscodeModelsTable extends Migration
     {
         Schema::create('technodream_passcode_models', function (Blueprint $table) {
             $table->id();
-            $table->string('passcode')->default('technodreamwebdesign');
+            $table->string('passcode');
             $table->timestamps();
         });
     }
