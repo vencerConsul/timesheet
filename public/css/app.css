@@ -11,7 +11,7 @@
 #landing{
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(#1796df , #0d6699);
+    background:#076dcc;
     display: flex;
     justify-content: center;
     align-items: center;
