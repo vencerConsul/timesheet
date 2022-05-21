@@ -15,7 +15,7 @@ Time Sheet
               <div class="form-group">
                 <input type="password" name="passcode" class="form-control @error('passcode') is-invalid @enderror" placeholder="Enter Technodream passcode" wire:model="passcode">
               </div>
-              <button type="submit" class="btn border-0 text-uppercase btn-primary btn-block">Proceed</button>
+              <button type="submit" class="btn border-0 text-uppercase btn-primary btn-block" @if($isSubmit) disabled @endif>Proceed</button>
             </form>
           </div>
     </div>

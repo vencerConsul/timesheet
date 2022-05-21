@@ -10,6 +10,7 @@ use Laravel\Socialite\Facades\Socialite;
 class Authentication extends Component
 {
     public $passcode;
+    public $isSubmit = false;
 
     public function checkpasscode(){
         $this->validate([
@@ -17,11 +18,12 @@ class Authentication extends Component
         ]);
 
         $checkPasscode = \App\Models\TechnodreamPasscodeModel::where('passcode', $this->passcode)->first();
-        
+        $this->isSubmit = true;
         if($checkPasscode){
             return redirect()->route('login.google');
         }else{
             session()->flash('message', 'Invalid passcode.');
+            $this->isSubmit = false;
         }
     }
 
