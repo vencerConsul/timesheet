@@ -19,8 +19,8 @@
 
 
 /* =============== dashboard =============== */
-.bg-primary{
-    background-color: #1477db !important;
+.bg-glass{
+    background-color: #ffffff25 !important;
 }
 .dashboard-navbar{
     flex-wrap: nowrap !important;
@@ -36,4 +36,37 @@
     width: 40px;
     object-fit: cover;
     border-radius: 50%;
+}
+
+.user-dropdown{
+    background: #00000026;
+    border-radius: 10px;
+}
+.user-dropdown .dropdown-menu{
+    background: #00000091;
+}
+.dropdown-item{
+    color: #fff !important;
+}
+.dropdown-toggle::after{
+    color: #ffffff;
+}
+
+.user-dropdown button#dropdownMenuButton {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+.user-dropdown button#dropdownMenuButton:focus{
+    outline: 0;
+    box-shadow: none;
+}
+.la-bell{
+    font-size: 30px !important;
+    color: rgb(194, 194, 194);
+    transition: 0.5s;
+}
+.la-bell:hover{
+    color: rgb(255, 255, 255);
 }

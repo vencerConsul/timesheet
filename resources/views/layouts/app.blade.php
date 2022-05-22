@@ -20,7 +20,7 @@
     @livewireStyles
 </head>
 
-<body>
+<body @auth style="background: url({{asset('img/body-background.jpg')}}) no-repeat;background-size: cover;background-position:center;" @endauth>
     @yield('content')
     
     <script src="{{ asset('/js/app.js') }}" defer></script>
