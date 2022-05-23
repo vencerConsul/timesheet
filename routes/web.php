@@ -14,6 +14,6 @@ Route::get('auth/google', [\App\Http\Livewire\Authentication::class, 'redirectTo
 Route::get('login/google/callback', [\App\Http\Livewire\Authentication::class, 'handleGoogleCallback']);
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/dashboard', [\App\Http\Livewire\User\Dashboard::class, 'render'])->name('home');
+    Route::get('/dashboard', \App\Http\Livewire\User\Dashboard::class)->name('home');
     Route::post('logout/', [\App\Http\Livewire\User\Dashboard::class, 'logout'])->name('logout');
 });

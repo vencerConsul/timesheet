@@ -15,12 +15,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" />
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     @livewireStyles
 </head>
 
-<body @auth style="background: url({{asset('img/body-background.jpg')}}) no-repeat;background-size: cover;background-position:center;" @endauth>
+<body  @auth class="@if(Auth::user()->mode) dark @endif" @endauth>
     @yield('content')
     
     <script src="{{ asset('/js/app.js') }}" defer></script>
@@ -28,6 +29,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
     @livewireScripts
+    @yield('dashboardScript')
 </body>
 
 </html>

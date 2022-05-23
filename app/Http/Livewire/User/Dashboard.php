@@ -2,13 +2,20 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Dashboard extends Component
 {
 
-
+    public function switchMode(){
+        if(Auth::user()->mode){
+            User::find(Auth::id())->update(['mode' => false]);
+        }else{
+            User::find(Auth::id())->update(['mode' => true]);
+        }
+    }
 
     // logout User
     public function logout() {
@@ -19,6 +26,9 @@ class Dashboard extends Component
 
     public function render()
     {
-        return view('livewire.user.dashboard');
+        $user = User::where('id', Auth::id())->first();
+        $isDark = $user->mode;
+
+        return view('livewire.user.dashboard', compact(['isDark']))->extends('layouts.app');
     }
 }

@@ -16,9 +16,8 @@ class Authentication extends Component
         $this->validate([
             'passcode' => 'required'
         ]);
-
-        $checkPasscode = \App\Models\TechnodreamPasscodeModel::where('passcode', $this->passcode)->first();
         $this->isSubmit = true;
+        $checkPasscode = \App\Models\TechnodreamPasscodeModel::where('passcode', $this->passcode)->first();
         if($checkPasscode){
             return redirect()->route('login.google');
         }else{
