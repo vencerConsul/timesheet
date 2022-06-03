@@ -8,6 +8,12 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
+    public $breaks;
+
+    public function breakOut(){
+        $this->breaks = "hello world";
+        \App\Events\breaktime::dispatch($this->breaks);
+    }
 
     public function switchMode(){
         if(Auth::user()->mode){

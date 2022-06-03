@@ -100,8 +100,8 @@
 				<li>
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">
-						<h3>1020</h3>
-						<p>New Order</p>
+						<h3>{{$breaks}}</h3>
+						<p><button wire:click="breakOut">Break</button></p>
 					</span>
 				</li>
 				<li>

@@ -18,6 +18,7 @@
     <!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
     @livewireStyles
 </head>
 
@@ -25,11 +26,18 @@
     @yield('content')
     
     <script src="{{ asset('/js/app.js') }}" defer></script>
+    <script>
+        Echo.channel('breaktime')
+        .listen('breaktime', function(e){
+            console.log(e);
+        })
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
     @livewireScripts
     @yield('dashboardScript')
+    
 </body>
 
 </html>
