@@ -218,4 +218,10 @@
 
 @section('dashboardScript')
     <script src="{{asset('js/dashboard.js')}}"></script>
+	<script>
+		Echo.channel('breaktime')
+		.listen('breaktime', function(e){
+			console.log(e);
+		})</script>
 @endsection
+

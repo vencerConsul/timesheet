@@ -25,18 +25,15 @@
 <body  @auth class="@if(Auth::user()->mode) dark @endif" @endauth>
     @yield('content')
     
-    <script src="{{ asset('/js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    @livewireScripts
+    @yield('dashboardScript')
     <script>
         Echo.channel('breaktime')
         .listen('breaktime', function(e){
             console.log(e);
         })
     </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-    @livewireScripts
-    @yield('dashboardScript')
     
 </body>
 

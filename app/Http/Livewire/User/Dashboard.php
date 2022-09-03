@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
-    public $breaks;
+    public $breaks = 'vencer';
 
     public function breakOut(){
         $this->breaks = "hello world";
